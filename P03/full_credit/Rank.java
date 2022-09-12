@@ -1,5 +1,4 @@
 
-
 public class Rank {
     private int rank;
 
