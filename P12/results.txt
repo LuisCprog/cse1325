@@ -1,0 +1,230 @@
+====================
+HOMEWORK P12 RESULTS
+====================
+
+Fall 2022
+
+
+FULL CREDIT
+===========
+
+NOTE: These are measurements which may vary plus your opinions which may vary a LOT. We won't grade for "correctness", just completeness.
+
+QUESTION 1: What Solver command line arguments did you use to achieve a 30 to 45 second runtime? Note: We're only interested in the "real" seconds for this question.
+
+$ time java Solver --slices 170000000 polys/*.poly
+Loading polys/poly2.poly... done
+Loading polys/poly2a.poly... done
+Loading polys/poly3.poly... done
+Loading polys/poly4.poly... done
+Loading polys/poly4a.poly... done
+
+threads = 1: range -1000.0 to 1000.0, 1.7E8 slices, precision = 1.0E-6
+
+polys/poly4a.poly: +1.00000x^4-26.0000x^2+25.0000x^0 has 4 roots
+  [-4.999999621268305, -0.9999996212598636, 1.000000378743195, 5.000000378751636]
+
+polys/poly3.poly: -4.00000x^3+6.00000x^2+2.00000x^1+0.00000x^0 has 3 roots
+  [-0.28077609184658114, 3.787416656598861E-7, 1.7807768493330776]
+
+polys/poly2.poly: +1.00000x^2-5.85988x^1+8.53975x^0 has 2 roots
+  [2.7182837316879978, 3.141596614041833]
+
+polys/poly2a.poly: +1.00000x^2-0.423320x^1-8.53975x^0 has 2 roots
+  [-2.7182799742046657, 3.1416003787477145]
+
+polys/poly4.poly: +1.00000x^4-10.3000x^3-166.500x^2+835.900x^1+991.100x^0 has 4 roots
+  [-10.999999621054481, -0.9999996212598636, 5.300000378752269, 17.000000378097504]
+
+
+real    0m38.704s
+user    0m0.015s
+sys     0m0.000s
+
+
+
+
+
+
+QUESTION 2: Provide the full output (including the time command) for your program, with 1 to 16 threads. **Ensure that the result is the same for all 16 runs.** (The root found may vary in the least significant digits.) With bash, you can run all of these with a single command if you like, adding whatever Solver command line arguments you identified in QUESTION 1: 
+
+for i in {1..16} ; do time java Solver --threads $i poly4.poly ; done
+=============================MY RUN=========================================
+$ for i in {1..16} ; do time java Solver --threads $1 --slices 170000000 polys/*.poly ; done
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.218s
+user    0m0.015s
+sys     0m0.000s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.187s
+user    0m0.000s
+sys     0m0.031s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.185s
+user    0m0.000s
+sys     0m0.031s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.187s
+user    0m0.015s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.172s
+user    0m0.000s
+sys     0m0.031s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.171s
+user    0m0.015s
+sys     0m0.000s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.169s
+user    0m0.000s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.173s
+user    0m0.000s
+sys     0m0.000s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.172s
+user    0m0.000s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.170s
+user    0m0.000s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.172s
+user    0m0.000s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.171s
+user    0m0.000s
+sys     0m0.000s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.173s
+user    0m0.000s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.154s
+user    0m0.015s
+sys     0m0.000s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.171s
+user    0m0.000s
+sys     0m0.015s
+Exception in thread "main" java.lang.NumberFormatException: For input string: "--slices"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:668)
+        at java.base/java.lang.Integer.parseInt(Integer.java:786)
+        at Solver.main(Solver.java:37)
+
+real    0m0.141s
+user    0m0.000s
+sys     0m0.015s
+
+
+
+QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
+
+
+to a certain extent it is more efficent for it have ther optimal theards usage a good example would be a like a compact carr that can hold 4 pepole
+it is idea for it to take four pepole but 5 it would just have to wait in this case queue for teh other
+
+
+
+
+
+QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
+
+
+in certain case it can be optionla but as siad in my previous answer it is idea to find the sweet spot for the threads 
+
+
+
+
+
+
+BONUS
+=====
+
+QUESTION 5: Time your version of ThreadedSolver as you did for the full credit version. Is this additional layer of threading faster, slower, or roughly equivalent in performance? Why?
+
+
+
+
+
+YOUR Timing:
